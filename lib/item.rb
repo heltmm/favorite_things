@@ -24,9 +24,15 @@ class Item
   end
 
   def save()
-    if @@list.all? {|item| item.rank != self.rank and item.name != self.name}
+    if @@list.all? do |item|
+      item.rank != self.rank and item.name != self.name and self.rank != "" and self.name != ""
+      end
       @@list.push(self)
     end
+  end
+
+  def self.sort()
+    @@list.sort_by {|x| x.rank }
   end
 
   def self.clear()
