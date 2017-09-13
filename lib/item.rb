@@ -31,8 +31,29 @@ class Item
     end
   end
 
+  def update()
+    @@list.map do |item|
+      if item.rank == self.rank and self.name != ""
+        item.name = ""
+        item.rank = ""
+      elsif item.name == self.name and self.rank != ""
+        item.name = ""
+        item.rank = ""
+      end
+    end
+  end
+
+  def self.delete(del_name)
+    @@list.each do |item|
+      if item.name == del_name
+        item.name = ""
+        item.rank = ""
+      end
+    end
+  end
+
   def self.sort()
-    @@list.sort_by {|x| x.rank }
+    @@list.sort_by! {|x| x.rank }
   end
 
   def self.clear()

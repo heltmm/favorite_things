@@ -1,2 +1,14 @@
 <h1>Name: <%= @item.name %></h1>
-<h1>Rank: <%= @item.rank %></h1>
+<h1>Rank: <%= @item.rank %></h1><br><br>
+
+
+<h2>Update</h2>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" name="name" class="form-control" type="text">
+    <label for="rank">Rank</label>
+    <input id="rank" name="rank" class="form-control" type="number">
+  </div>
+  <button type="submit" class="btn btn-info">Submit!</button>
+</form>
